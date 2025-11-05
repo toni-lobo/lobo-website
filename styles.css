@@ -7,7 +7,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #1a1a1a;
+    background: #ffffff;
 }
 
 .container {
@@ -18,28 +19,58 @@ body {
 
 /* Header */
 header {
-    background: white;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 24px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    height: 80px;
+    height: 85px;
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #1E9BD6 0%, #155A8A 100%);
+    background: linear-gradient(135deg, #0f75bc 0%, #0a4d7c 100%);
     color: white;
-    padding: 100px 0;
+    padding: 120px 0 100px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 0;
     font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .hero p {
@@ -48,110 +79,298 @@ header {
     opacity: 0.95;
 }
 
+/* Pitch Section */
+.pitch {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+    text-align: center;
+}
+
+.pitch p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: #334155;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    font-weight: 400;
+}
+
+.pitch p strong {
+    color: #0f75bc;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 16px;
+}
+
 /* Buttons */
 .cta-button {
     background: white;
-    color: #1E9BD6;
+    color: #0f75bc;
     border: none;
-    padding: 15px 40px;
+    padding: 16px 48px;
     font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    letter-spacing: 0.01em;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background: #f8fafc;
+}
+
+.cta-button:active {
+    transform: translateY(0);
 }
 
 /* Features Section */
 .features {
-    padding: 80px 0;
-    background: #f8f9fa;
+    padding: 100px 0;
+    background: #ffffff;
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #155A8A;
+    font-size: 2.75rem;
+    margin-bottom: 60px;
+    color: #0a4d7c;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .feature {
     background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s;
+    padding: 40px 32px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .feature:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 117, 188, 0.12);
+    border-color: #cbd5e1;
 }
 
 .feature h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #1E9BD6;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .feature p {
-    color: #666;
-    font-size: 1.1rem;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.75rem;
+    margin-bottom: 32px;
+    color: #0a4d7c;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.how-it-works .workflow {
+    font-size: 1.6rem;
+    color: #0f75bc;
+    margin-bottom: 56px;
+    font-weight: 600;
+}
+
+.how-it-works .steps {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.how-it-works .steps li {
+    font-size: 1.2rem;
+    padding: 24px 24px 24px 72px;
+    color: #334155;
+    background: white;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    transition: all 0.3s ease;
+    counter-increment: step-counter;
+}
+
+.how-it-works .steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #0f75bc 0%, #0a4d7c 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.how-it-works .steps li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 16px rgba(15, 117, 188, 0.1);
+    border-color: #cbd5e1;
+}
+
+.how-it-works .steps li:last-child {
+    margin-bottom: 0;
 }
 
 /* CTA Section */
 .cta-section {
-    background: #155A8A;
+    background: linear-gradient(135deg, #0f75bc 0%, #0a4d7c 100%);
     color: white;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .cta-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .cta-section p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.35rem;
+    margin-bottom: 40px;
     opacity: 0.95;
 }
 
 /* Footer */
 footer {
-    background: #1a1a1a;
+    background: #0f172a;
     color: white;
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
+    border-top: 1px solid #1e293b;
 }
 
 footer p {
-    opacity: 0.8;
+    opacity: 0.7;
+    font-size: 0.95rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        padding: 80px 0 60px;
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero p {
         font-size: 1.2rem;
     }
 
+    .pitch {
+        padding: 60px 0;
+    }
+
+    .pitch p {
+        font-size: 1.15rem;
+    }
+
+    .pitch p strong {
+        font-size: 1.25rem;
+    }
+
+    .features,
+    .how-it-works,
+    .cta-section {
+        padding: 60px 0;
+    }
+
     .features h2,
+    .how-it-works h2,
     .cta-section h2 {
         font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature {
+        padding: 32px 24px;
+    }
+
+    .how-it-works .workflow {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+    }
+
+    .how-it-works .steps li {
+        font-size: 1.05rem;
+        padding: 20px 20px 20px 64px;
+    }
+
+    .how-it-works .steps li::before {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+        left: 20px;
+    }
+
+    .logo {
+        height: 70px;
     }
 }
