@@ -48,6 +48,26 @@ header {
     opacity: 0.95;
 }
 
+/* Pitch Section */
+.pitch {
+    padding: 60px 0;
+    background: white;
+    text-align: center;
+}
+
+.pitch p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto 20px;
+}
+
+.pitch p strong {
+    color: #1E9BD6;
+    font-size: 1.4rem;
+}
+
 /* Buttons */
 .cta-button {
     background: white;
@@ -107,6 +127,43 @@ header {
 .feature p {
     color: #666;
     font-size: 1.1rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background: white;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #155A8A;
+}
+
+.how-it-works .workflow {
+    font-size: 1.5rem;
+    color: #1E9BD6;
+    margin-bottom: 40px;
+}
+
+.how-it-works .steps {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    list-style-position: inside;
+}
+
+.how-it-works .steps li {
+    font-size: 1.2rem;
+    padding: 15px 0;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.how-it-works .steps li:last-child {
+    border-bottom: none;
 }
 
 /* CTA Section */
