@@ -181,77 +181,6 @@ header {
     line-height: 1.7;
 }
 
-/* How It Works Section */
-.how-it-works {
-    padding: 100px 0;
-    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
-    text-align: center;
-}
-
-.how-it-works h2 {
-    font-size: 2.75rem;
-    margin-bottom: 32px;
-    color: #0a4d7c;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-}
-
-.how-it-works .workflow {
-    font-size: 1.6rem;
-    color: #0f75bc;
-    margin-bottom: 56px;
-    font-weight: 600;
-}
-
-.how-it-works .steps {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    list-style: none;
-    counter-reset: step-counter;
-}
-
-.how-it-works .steps li {
-    font-size: 1.2rem;
-    padding: 24px 24px 24px 72px;
-    color: #334155;
-    background: white;
-    margin-bottom: 16px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    position: relative;
-    transition: all 0.3s ease;
-    counter-increment: step-counter;
-}
-
-.how-it-works .steps li::before {
-    content: counter(step-counter);
-    position: absolute;
-    left: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, #0f75bc 0%, #0a4d7c 100%);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.95rem;
-}
-
-.how-it-works .steps li:hover {
-    transform: translateX(8px);
-    box-shadow: 0 8px 16px rgba(15, 117, 188, 0.1);
-    border-color: #cbd5e1;
-}
-
-.how-it-works .steps li:last-child {
-    margin-bottom: 0;
-}
-
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, #0f75bc 0%, #0a4d7c 100%);
@@ -332,13 +261,11 @@ footer p {
     }
 
     .features,
-    .how-it-works,
     .cta-section {
         padding: 60px 0;
     }
 
     .features h2,
-    .how-it-works h2,
     .cta-section h2 {
         font-size: 2rem;
         margin-bottom: 40px;
@@ -351,23 +278,6 @@ footer p {
 
     .feature {
         padding: 32px 24px;
-    }
-
-    .how-it-works .workflow {
-        font-size: 1.3rem;
-        margin-bottom: 40px;
-    }
-
-    .how-it-works .steps li {
-        font-size: 1.05rem;
-        padding: 20px 20px 20px 64px;
-    }
-
-    .how-it-works .steps li::before {
-        width: 32px;
-        height: 32px;
-        font-size: 0.85rem;
-        left: 20px;
     }
 
     .logo {
