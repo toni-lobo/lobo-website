@@ -9,7 +9,14 @@
 <body>
     <header>
         <div class="container">
-            <img src="lobo.png" alt="Lobo Logo" class="logo">
+            <nav class="navbar">
+                <img src="lobo.png" alt="Lobo Logo" class="logo">
+                <ul class="nav-links">
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -27,7 +34,7 @@
             </div>
         </section>
 
-        <section class="features">
+        <section id="product" class="features">
             <div class="container">
                 <h2>Product</h2>
                 <div class="feature-grid">
@@ -55,7 +62,7 @@
             </div>
         </section>
 
-        <section class="how-it-works">
+        <section id="how-it-works" class="how-it-works">
             <div class="container">
                 <h2>How It Works</h2>
                 <p class="workflow"><strong>Your Data → Lobo → Production Model</strong></p>
@@ -70,7 +77,7 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section id="contact" class="cta-section">
             <div class="container">
                 <button class="cta-button">Contact Us</button>
             </div>
@@ -79,7 +86,29 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Lobo AutoML. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Lobo AutoML</h4>
+                    <p>Automating machine learning for modern teams</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#product">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Get Started</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lobo AutoML. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
